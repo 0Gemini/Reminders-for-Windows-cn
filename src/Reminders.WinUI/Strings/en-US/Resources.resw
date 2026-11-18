@@ -16,7 +16,7 @@
     <value>About</value>
   </data>
   <data name="AboutAppDisclaimer" xml:space="preserve">
-    <value>Reminders for Windows is an independent app and is not affiliated with, endorsed by, or sponsored by Apple Inc. or Microsoft Corporation. iCloud is a trademark of Apple Inc. Windows is a trademark of Microsoft Corporation. Sync uses unofficial iCloud interfaces that may change or stop working without notice.</value>
+    <value>Gemini Reminders CN is an independent app and is not affiliated with, endorsed by, or sponsored by Apple Inc. or Microsoft Corporation. iCloud is a trademark of Apple Inc. Windows is a trademark of Microsoft Corporation. Sync uses unofficial iCloud interfaces that may change or stop working without notice.</value>
   </data>
   <data name="AboutSettingsDescription" xml:space="preserve">
     <value>App information and support.</value>
@@ -91,7 +91,7 @@
     <value>Apple ID</value>
   </data>
   <data name="AppleIdBox.PlaceholderText" xml:space="preserve">
-    <value>you@icloud.com</value>
+    <value>you@icloud.com.cn</value>
   </data>
   <data name="AppleSignInConnecting" xml:space="preserve">
     <value>Connecting your Apple session to the app…</value>
@@ -100,7 +100,7 @@
     <value>Apple sign-in could not open. Check Microsoft Edge WebView2 Runtime, or cancel and use text verification.</value>
   </data>
   <data name="AppleSignInDialogTitle" xml:space="preserve">
-    <value>Apple sign-in · icloud.com</value>
+    <value>Apple sign-in · icloud.com.cn</value>
   </data>
   <data name="AppleSignInImportFailed" xml:space="preserve">
     <value>The app could not read or save Apple's sign-in session. Reload Apple sign-in to try again, or cancel and use text verification.</value>
@@ -136,7 +136,7 @@
     <value>Apple's sign-in service returned HTTP {0}. Reload Apple sign-in to try again, or cancel and use text verification.</value>
   </data>
   <data name="AppTitle" xml:space="preserve">
-    <value>Reminders for Windows</value>
+    <value>Gemini Reminders CN</value>
   </data>
   <data name="Automatic" xml:space="preserve">
     <value>Automatic</value>
@@ -256,7 +256,7 @@
     <value>Sync conflicts</value>
   </data>
   <data name="ContactPaulSavvas" xml:space="preserve">
-    <value>Contact Paul Savvas</value>
+    <value>View personal fork</value>
   </data>
   <data name="ContinueInApp" xml:space="preserve">
     <value>Continue in app</value>
@@ -265,7 +265,7 @@
     <value>Continue on Apple's sign-in page.</value>
   </data>
   <data name="CopiedSignInError" xml:space="preserve">
-    <value>Reminders for Windows {0}
+    <value>Gemini Reminders CN {0}
 {1}
 {2}
 {3}</value>
@@ -507,7 +507,7 @@ Any subtasks will also be deleted.</value>
     <value>Edit this custom repeat on an Apple device to preserve its schedule.</value>
   </data>
   <data name="EditorPreviewWindowTitle" xml:space="preserve">
-    <value>Reminders for Windows · Editor preview</value>
+    <value>Gemini Reminders CN · Editor preview</value>
   </data>
   <data name="EditorUnsavedChangesWarning" xml:space="preserve">
     <value>The changes to this task haven't been saved.</value>
@@ -850,7 +850,7 @@ Any subtasks will also be deleted.</value>
     <value>Update verification failed. The installer was not run.</value>
   </data>
   <data name="ErrorVerificationAccepted" xml:space="preserve">
-    <value>Apple accepted the verification code, but iCloud account sign-in failed{0}. Try again, or sign in at iCloud.com to check your account.</value>
+    <value>Apple accepted the verification code, but iCloud account sign-in failed{0}. Try again, or sign in at iCloud.com.cn to check your account.</value>
     <comment>{0} is an optional HTTP status suffix, including the leading space and parentheses.</comment>
   </data>
   <data name="ErrorVerificationAppleReason" xml:space="preserve">
@@ -1082,7 +1082,7 @@ Any subtasks will also be deleted.</value>
     <value>My lists</value>
   </data>
   <data name="Navigation.PaneTitle" xml:space="preserve">
-    <value>Reminders for Windows</value>
+    <value>Gemini Reminders CN</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Never</value>
@@ -1230,7 +1230,7 @@ Any subtasks will also be deleted.</value>
     <value>{0} queued changes or conflicts. Review the affected tasks before discarding anything.</value>
   </data>
   <data name="RecoveryPreviewWindowTitle" xml:space="preserve">
-    <value>Reminders for Windows · Recovery preview</value>
+    <value>Gemini Reminders CN · Recovery preview</value>
   </data>
   <data name="Red" xml:space="preserve">
     <value>Red</value>
@@ -1314,10 +1314,10 @@ Any subtasks will also be deleted.</value>
     <value>Tomorrow</value>
   </data>
   <data name="RemindersForWindowsIconImage.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Reminders for Windows icon</value>
+    <value>Gemini Reminders CN icon</value>
   </data>
   <data name="RemindersForWindowsTextBlock.Text" xml:space="preserve">
-    <value>Reminders for Windows</value>
+    <value>Gemini Reminders CN</value>
   </data>
   <data name="RemindersStayOnThisPC" xml:space="preserve">
     <value>Reminders stay on this PC.</value>
@@ -1551,13 +1551,13 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>If the browser works but this app fails, review the exact error and the setup guide. The app cannot inspect these account settings, so a sign-in failure alone does not prove one is wrong. Troubleshooting also lets you open the diagnostic-log folder.</value>
   </data>
   <data name="SetupVerifyListsSummary" xml:space="preserve">
-    <value>Make sure your reminders are available on iCloud.com.</value>
+    <value>Make sure your reminders are available on iCloud.com.cn.</value>
   </data>
   <data name="SetupVerifyListsTitle" xml:space="preserve">
     <value>Check your lists</value>
   </data>
   <data name="SetupWebAccessDetails" xml:space="preserve">
-    <value>In your Apple device's iCloud settings, turn on Access iCloud Data on the Web. On newer versions, open iCloud.com (or Data Access on iCloud.com) in those settings and turn on Allow Data Access.</value>
+    <value>In your Apple device's iCloud settings, turn on Access iCloud Data on the Web. On newer versions, open iCloud.com.cn (or Data Access on iCloud.com.cn) in those settings and turn on Allow Data Access.</value>
   </data>
   <data name="SetupWebAccessDetailsHeading" xml:space="preserve">
     <value>Other settings labels</value>
@@ -1602,7 +1602,7 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>Sign in</value>
   </data>
   <data name="SignInCodeAcceptedNext" xml:space="preserve">
-    <value>The code was accepted. Check that this account can open Reminders on iCloud.com and finish any account setup or updated terms there. Review web access, then try signing in again.</value>
+    <value>The code was accepted. Check that this account can open Reminders on iCloud.com.cn and finish any account setup or updated terms there. Review web access, then try signing in again.</value>
   </data>
   <data name="SignInCodeAcceptedTitle" xml:space="preserve">
     <value>Code accepted; account sign-in failed</value>
@@ -1647,7 +1647,7 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>Sign-in needed</value>
   </data>
   <data name="SignInNetworkNext" xml:space="preserve">
-    <value>Check your internet connection and try again. If iCloud.com works but this app still fails, review the setup guide and open the diagnostic-log folder. This error does not confirm that your password or account settings are wrong.</value>
+    <value>Check your internet connection and try again. If iCloud.com.cn works but this app still fails, review the setup guide and open the diagnostic-log folder. This error does not confirm that your password or account settings are wrong.</value>
   </data>
   <data name="SignInNetworkTitle" xml:space="preserve">
     <value>Could not finish connecting to iCloud</value>
@@ -1660,7 +1660,7 @@ Accept any updated terms, then check that your lists appear.</value>
     <comment>{0} error reason. {1} HTTP status, such as HTTP 503.</comment>
   </data>
   <data name="SignInRejectedNext" xml:space="preserve">
-    <value>Check the Apple Account and regular password on iCloud.com. A verification session may also have expired; start a new sign-in if needed. Review the account setup before trying again.</value>
+    <value>Check the Apple Account and regular password on iCloud.com.cn. A verification session may also have expired; start a new sign-in if needed. Review the account setup before trying again.</value>
   </data>
   <data name="SignInRejectedTitle" xml:space="preserve">
     <value>Apple rejected this sign-in attempt</value>
@@ -1669,13 +1669,13 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>The iCloud request timed out. Please try again.</value>
   </data>
   <data name="SignInTermsNext" xml:space="preserve">
-    <value>Open iCloud.com with the same account, review and accept Apple's updated terms, then sign in here again.</value>
+    <value>Open iCloud.com.cn with the same account, review and accept Apple's updated terms, then sign in here again.</value>
   </data>
   <data name="SignInTermsTitle" xml:space="preserve">
     <value>Updated iCloud terms need attention</value>
   </data>
   <data name="SignInTestWindowTitle" xml:space="preserve">
-    <value>Reminders for Windows · Sign-in test</value>
+    <value>Gemini Reminders CN · Sign-in test</value>
   </data>
   <data name="SignInToICloud" xml:space="preserve">
     <value>Sign in to iCloud</value>
@@ -1684,7 +1684,7 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>Sign in to resume syncing</value>
   </data>
   <data name="SignInUnknownNext" xml:space="preserve">
-    <value>The app could not determine the exact cause. Check the same account in iCloud.com, review the setup guide, and use the diagnostic log if the issue continues.</value>
+    <value>The app could not determine the exact cause. Check the same account in iCloud.com.cn, review the setup guide, and use the diagnostic log if the issue continues.</value>
   </data>
   <data name="SignInUnknownTitle" xml:space="preserve">
     <value>Sign-in did not finish</value>
@@ -1864,7 +1864,7 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>Upcoming</value>
   </data>
   <data name="UpdateAvailableTitle" xml:space="preserve">
-    <value>Reminders for Windows {0} is available</value>
+    <value>Gemini Reminders CN {0} is available</value>
   </data>
   <data name="UpdateButton.Content" xml:space="preserve">
     <value>Install and restart</value>
@@ -1882,7 +1882,7 @@ Accept any updated terms, then check that your lists appear.</value>
     <value>{0:F0}% downloaded</value>
   </data>
   <data name="UpdateInstallConfirmation" xml:space="preserve">
-    <value>Reminders for Windows will close while the update installs, then reopen. Save any unfinished reminder edits first.</value>
+    <value>Gemini Reminders CN will close while the update installs, then reopen. Save any unfinished reminder edits first.</value>
   </data>
   <data name="UpdateInstallDescription" xml:space="preserve">
     <value>Install the update and restart when you're ready. Your reminders and sign-in will be kept.</value>

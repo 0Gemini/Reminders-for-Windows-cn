@@ -29,7 +29,7 @@ internal static class RecurrenceAndSyncChecks
             var body = request.Content is null ? new JsonObject() : JsonNode.Parse(await request.Content.ReadAsStringAsync())!;
             JsonNode response;
             if (request.RequestUri!.AbsolutePath.EndsWith("/accountLogin"))
-                response = J.Node(new { dsInfo = new { dsid = "1", hsaVersion = 2, appleId = "test@example.com" }, hsaTrustedBrowser = true, webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } });
+                response = J.Node(new { dsInfo = new { dsid = "1", hsaVersion = 2, appleId = "test@example.com" }, hsaTrustedBrowser = true, webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } });
             else if (request.RequestUri.AbsolutePath.EndsWith("records/lookup"))
                 // CloudKit Web Services uses NOT_FOUND, rather than the native
                 // CKError name UNKNOWN_ITEM, for a record that does not exist yet.

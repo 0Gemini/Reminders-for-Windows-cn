@@ -8,6 +8,7 @@ using Reminders.Core;
 
 var passed = 0;
 void Check(bool condition, string name) { if (!condition) throw new Exception(name); passed++; }
+ChinaRegionChecks.Run(Check);
 void Equal<T>(T expected, T actual, string name) => Check(Equals(expected, actual), $"{name}: expected {expected}, got {actual}");
 async Task Error(Func<Task> action, string code, string name) { try { await action(); throw new Exception(name + ": expected error"); } catch (CoreException e) { Equal(code, e.Code, name); } }
 string Hex(byte[] b) => Convert.ToHexString(b).ToLowerInvariant();
@@ -150,7 +151,7 @@ using (var client = new ICloudClient("vector@example.com", new SecretStore(login
     else if (path.EndsWith("/accountLogin"))
     {
         Equal("web-token", body.Text("dsWebAuthToken"), "setup token payload");
-        response = J.Node(new { dsInfo = new { dsid = "123", hsaVersion = 2 }, hsaChallengeRequired = !trusted, hsaTrustedBrowser = trusted, webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } });
+        response = J.Node(new { dsInfo = new { dsid = "123", hsaVersion = 2 }, hsaChallengeRequired = !trusted, hsaTrustedBrowser = trusted, webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } });
     }
     else if (path.EndsWith("/verify/phone"))
     {
@@ -175,11 +176,11 @@ using (var client = new ICloudClient("vector@example.com", new SecretStore(login
     client.SignOut(); Check(new SecretStore(loginVault).Password("vector@example.com") is null, "sign out removes remembered password");
 }
 // A server that repeats its continuation token must fail instead of spinning.
-using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } }).AsObject(), () => new ResponseHandler(() => new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("{\"records\":[],\"continuationMarker\":\"same\"}") })))
+using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } }).AsObject(), () => new ResponseHandler(() => new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("{\"records\":[],\"continuationMarker\":\"same\"}") })))
     await Error(() => new CloudKit(auth).Query("Hashtag", new(), default), "ERROR", "pagination repeated marker");
 using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://evil.example" } } }).AsObject()))
     await Error(() => new CloudKit(auth).Query("Hashtag", new(), default), "ERROR", "unsafe service endpoint");
-using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } }).AsObject(), () => new ResponseHandler(() => new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("{\"reason\":\"record type is not queryable\"}") })))
+using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } }).AsObject(), () => new ResponseHandler(() => new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("{\"reason\":\"record type is not queryable\"}") })))
 {
     try { await new CloudKit(auth).Query("Hashtag", new(), default); throw new Exception("expected query rejection"); }
     catch (CoreException ex) { Equal("ERROR", ex.Code, "HTTP 400 is a request rejection"); Check(ex.Message.Contains("HTTP 400") && ex.Detail.Contains("not queryable"), "request rejection exposes useful reason"); }
@@ -195,7 +196,7 @@ try
     {
         var body = request.Content is null ? new JsonObject() : J.Parse(await request.Content.ReadAsStringAsync())!;
         var path = request.RequestUri!.AbsolutePath; JsonNode response;
-        if (path.EndsWith("accountLogin")) response = J.Node(new { dsInfo = new { dsid = "123", hsaVersion = 2 }, hsaChallengeRequired = false, hsaTrustedBrowser = true, webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } });
+        if (path.EndsWith("accountLogin")) response = J.Node(new { dsInfo = new { dsid = "123", hsaVersion = 2 }, hsaChallengeRequired = false, hsaTrustedBrowser = true, webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } });
         else if (path.EndsWith("records/modify"))
         {
             var operation = body.Array("operations")[0]!; var record = operation["record"]!.AsObject();

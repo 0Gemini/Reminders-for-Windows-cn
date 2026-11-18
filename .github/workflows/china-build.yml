@@ -1,0 +1,37 @@
+name: Build Gemini Reminders CN
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1
+        with:
+          dotnet-version: '8.0.x'
+      - name: Test authentication and sync
+        run: |
+          dotnet run --project tests/Reminders.Core.Tests/Reminders.Core.Tests.csproj -c Release
+          if ($LASTEXITCODE -ne 0) { throw 'Core tests failed' }
+          dotnet run --project tests/AppUpdater.Tests/AppUpdater.Tests.csproj -c Release
+          if ($LASTEXITCODE -ne 0) { throw 'Updater tests failed' }
+      - name: Build x64 portable app
+        run: ./scripts/build-windows.ps1 -Architecture x64 -LockedRestore
+      - name: Include license and fork notes
+        run: Copy-Item LICENSE,docs/china-fork.md -Destination dist-windows
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Gemini-Reminders-CN-x64
+          path: dist-windows/
+          if-no-files-found: error

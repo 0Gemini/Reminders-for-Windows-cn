@@ -11,7 +11,7 @@ internal static class ICloudSetupGuide
             L10n.Get("SetupRemindersSummary"),
             L10n.Get("SetupRemindersDetails"),
             L10n.Get("SetupRemindersNote"),
-            L10n.Get("SetupRemindersLink"), "https://www.icloud.com/reminders/", "\uE8FD",
+            L10n.Get("SetupRemindersLink"), "https://www.icloud.com.cn/reminders/", "\uE8FD",
             L10n.Get("SetupRemindersInstructions"), L10n.Get("SetupRemindersDetailsHeading")),
         new(L10n.Get("SetupVerificationTitle"),
             L10n.Get("SetupVerificationSummary"),
@@ -36,7 +36,7 @@ internal static class ICloudSetupGuide
             L10n.Get("SetupVerifyListsSummary"),
             L10n.Get("SetupVerifyListsDetails"),
             L10n.Get("SetupVerifyListsNote"),
-            L10n.Get("SetupVerifyListsLink"), "https://www.icloud.com/reminders/", "\uE73E",
+            L10n.Get("SetupVerifyListsLink"), "https://www.icloud.com.cn/reminders/", "\uE73E",
             L10n.Get("SetupVerifyListsInstructions"), L10n.Get("SetupVerifyListsDetailsHeading"))
     };
 }

@@ -8,13 +8,13 @@ internal sealed record AppleSignInFailure(PresentationMessage Message, string Di
 
 internal static class AppleSignInPolicy
 {
-    public const string StartUrl = "https://www.icloud.com/reminders/";
+    public const string StartUrl = "https://www.icloud.com.cn/reminders/";
 
     public static bool IsRemindersResponse(Uri uri, int status)
     {
         var path = uri.AbsolutePath;
         return status == 200 && IsAppleUri(uri) &&
-            (uri.Host == "ckdatabasews.icloud.com" || uri.Host.EndsWith("-ckdatabasews.icloud.com", StringComparison.OrdinalIgnoreCase)) &&
+            (uri.Host == "ckdatabasews.icloud.com.cn" || uri.Host.EndsWith("-ckdatabasews.icloud.com.cn", StringComparison.OrdinalIgnoreCase)) &&
             path.StartsWith("/database/1/com.apple.reminders/production/private/", StringComparison.Ordinal) &&
             (path.EndsWith("/records/query", StringComparison.Ordinal) || path.EndsWith("/changes/zone", StringComparison.Ordinal));
     }
@@ -30,7 +30,7 @@ internal static class AppleSignInPolicy
     }
 
     public static bool IsAppleUri(Uri uri) => uri.Scheme == "https" && uri.UserInfo.Length == 0 &&
-        (uri.Host == "icloud.com" || uri.Host.EndsWith(".icloud.com", StringComparison.OrdinalIgnoreCase) ||
+        (uri.Host == "icloud.com.cn" || uri.Host.EndsWith(".icloud.com.cn", StringComparison.OrdinalIgnoreCase) ||
          uri.Host == "apple.com" || uri.Host.EndsWith(".apple.com", StringComparison.OrdinalIgnoreCase));
 
     // window.open() can create a blank child before navigating it. Keep that
@@ -42,7 +42,7 @@ internal static class AppleSignInPolicy
     {
         if (!IsAppleUri(uri)) return null;
         if (uri.Host == "idmsa.apple.com" && uri.AbsolutePath.StartsWith("/appleauth/auth", StringComparison.Ordinal)) return "authentication";
-        if (uri.Host == "setup.icloud.com" && uri.AbsolutePath.StartsWith("/setup/ws/1/", StringComparison.Ordinal)) return "account";
+        if (uri.Host == "setup.icloud.com.cn" && uri.AbsolutePath.StartsWith("/setup/ws/1/", StringComparison.Ordinal)) return "account";
         return null;
     }
 

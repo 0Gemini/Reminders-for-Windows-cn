@@ -8,7 +8,7 @@ internal static class AuthVerificationChecks
     {
         var saved = J.Node(new { session_token = "saved", trust_token = "trusted", client_id = "stable-client", cookies = new[]
         {
-            new { name = "X-APPLE-WEBAUTH-TRUST", value = "cookie", domain = ".icloud.com", path = "/", expires = DateTimeOffset.UtcNow.AddDays(30).ToUnixTimeSeconds() },
+            new { name = "X-APPLE-WEBAUTH-TRUST", value = "cookie", domain = ".icloud.com.cn", path = "/", expires = DateTimeOffset.UtcNow.AddDays(30).ToUnixTimeSeconds() },
             new { name = "ignored", value = "foreign", domain = ".example.com", path = "/", expires = 0L }
         } }).AsObject();
         using (var cookieAuth = new AppleAuth((JsonObject)saved.DeepClone()))

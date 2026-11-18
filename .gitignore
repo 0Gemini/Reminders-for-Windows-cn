@@ -33,3 +33,7 @@ dist-store/
 node_modules/
 build/
 *.spec
+
+# Local build caches
+.dotnet-home/
+.nuget-packages/

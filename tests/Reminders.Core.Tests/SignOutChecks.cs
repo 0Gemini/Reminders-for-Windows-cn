@@ -13,7 +13,7 @@ internal static class SignOutChecks
         var vault = new MemorySecrets(); var secrets = new SecretStore(vault);
         var state = J.Node(new { browser_cookie_session = true, session_token = "saved-token", trust_token = "saved-trust", cookies = new[]
         {
-            new { name = "X-APPLE-WEBAUTH-TOKEN", value = "test-cookie", domain = ".icloud.com", path = "/", expires = 0L }
+            new { name = "X-APPLE-WEBAUTH-TOKEN", value = "test-cookie", domain = ".icloud.com.cn", path = "/", expires = 0L }
         } }).AsObject();
         secrets.Password(account, "saved-password"); secrets.Session(account, state.ToJsonString());
         var requests = 0;

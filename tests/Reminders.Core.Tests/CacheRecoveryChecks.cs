@@ -6,7 +6,7 @@ using Reminders.Core;
 internal static class CacheRecoveryChecks
 {
     private static JsonNode Account => J.Node(new { dsInfo = new { dsid = "1", appleId = "test@example.com", hsaVersion = 2 }, hsaTrustedBrowser = true,
-        webservices = new { ckdatabasews = new { url = "https://p01-ckdatabasews.icloud.com" } } });
+        webservices = new { ckdatabasews = new { url = "https://p01-ckdatabasews.icloud.com.cn" } } });
     private static JsonNode RemoteList => J.Node(new { recordName = "list", recordType = "List", fields = new { Name = new { type = "STRING", value = "Fresh list" } } });
     private static JsonNode RemoteReminder => J.Node(new { recordName = "fresh", recordType = "Reminder", fields = new { Title = new { type = "STRING", value = "Fresh reminder" }, List = new { type = "REFERENCE", value = new { recordName = "list" } } } });
     private static HttpResponseMessage Reply(JsonNode body) => new(HttpStatusCode.OK) { Content = new StringContent(body.ToJsonString()) };

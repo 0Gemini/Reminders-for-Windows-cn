@@ -5,7 +5,7 @@ using Reminders.Core;
 internal static class WriteCompatibilityChecks
 {
     private static JsonNode Account => J.Node(new { dsInfo = new { dsid = "1", hsaVersion = 2 }, hsaTrustedBrowser = true,
-        webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } });
+        webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } });
     private static HttpResponseMessage Reply(JsonNode body) => new(HttpStatusCode.OK) { Content = new StringContent(body.ToJsonString()) };
 
     public static async Task RunAsync(Action<bool, string> check)
@@ -15,7 +15,7 @@ internal static class WriteCompatibilityChecks
         // still fail; none of those justify blindly submitting a create.
         foreach (var code in new[] { "NOT_FOUND", "UNKNOWN_ITEM", "ACCESS_DENIED", "ZONE_NOT_FOUND", "AUTHENTICATION_REQUIRED" })
         {
-            using var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } }).AsObject(),
+            using var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } }).AsObject(),
                 () => new ResponseHandler(() => Reply(J.Node(new { records = new[] { new { recordName = "Reminder/new", serverErrorCode = code } } }))));
             var cloud = new CloudKit(auth);
             var missing = code is "NOT_FOUND" or "UNKNOWN_ITEM";
@@ -29,7 +29,7 @@ internal static class WriteCompatibilityChecks
         }
 
         var diagnostics = new List<string>();
-        using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } }).AsObject(),
+        using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } }).AsObject(),
             () => new ResponseHandler(() => Reply(J.Node(new { serverErrorCode = "NOT_FOUND", reason = "private reason", recordName = "private identity" })))))
         {
             auth.Diagnostic += diagnostics.Add;
@@ -38,7 +38,7 @@ internal static class WriteCompatibilityChecks
         }
         check(diagnostics.Contains("icloud: records/lookup server_error=NOT_FOUND"), "diagnostics identify endpoint and record error code");
         check(!diagnostics.Any(line => line.Contains("private identity") || line.Contains("private reason")), "diagnostics omit record identities and server reason text");
-        using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com" } } }).AsObject(),
+        using (var auth = new AppleAuth(J.Node(new { webservices = new { ckdatabasews = new { url = "https://p01.icloud.com.cn" } } }).AsObject(),
             () => new ResponseHandler(() => Reply(J.Node(new { records = new[] { new { serverErrorCode = "private\naccount@example.com", reason = "private" } } })))))
         {
             auth.Diagnostic += diagnostics.Add;

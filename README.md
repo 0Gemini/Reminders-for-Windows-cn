@@ -1,3 +1,9 @@
+# Gemini Reminders CN
+
+Personal China-region fork for 0Gemini. See [build instructions and validation status](docs/china-fork.md). This fork uses icloud.com.cn and has separate local data from the Store app. Live account verification is still pending.
+
+---
+
 <div align="center">
 <img src="src/Reminders.WinUI/Assets/icon-v2.png" width="112" alt="Reminders app icon">
 

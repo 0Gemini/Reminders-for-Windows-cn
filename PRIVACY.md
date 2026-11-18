@@ -1,3 +1,7 @@
+# Personal fork notice
+
+This is 0Gemini's personal China-region adaptation of Reminders for Windows, not a release maintained by Paul Savvas. Authentication and sync target iCloud China; update checks target 0Gemini/Reminders-for-Windows-cn. No new telemetry is added. The upstream policy follows with storage locations adapted. Upstream contact addresses refer to the original project, not support for this fork.
+
 # Privacy Policy for Reminders for Windows
 
 Effective date: October 5, 2026. Last updated: October 22, 2026.
@@ -34,7 +38,7 @@ If you contact the developer, the information you choose to send, such as your e
 
 ## Local storage and security
 
-For unpackaged installations, reminder data and the account identifier are normally stored in %LOCALAPPDATA%\RemindersSync\cache.db. Logs are in %LOCALAPPDATA%\RemindersSync\logs. Interface preferences and downloaded updates are under %LOCALAPPDATA%\RemindersForWindows. Windows may redirect these locations into package-specific storage for an MSIX installation.
+For unpackaged installations, reminder data and the account identifier are normally stored in %LOCALAPPDATA%\GeminiRemindersCNSync\cache.db. Logs are in %LOCALAPPDATA%\GeminiRemindersCNSync\logs. Interface preferences and downloaded updates are under %LOCALAPPDATA%\GeminiRemindersCN. Windows may redirect these locations into package-specific storage for an MSIX installation.
 
 The reminder database is not encrypted by the app. Its protection depends on your Windows account, device security, and any disk encryption you enable. Passwords and session tokens are stored separately in Windows Credential Manager, not in the SQLite database. Network communication with Apple and GitHub uses HTTPS. No storage or transmission method can guarantee complete security.
 
@@ -48,7 +52,7 @@ You can disable due-date notifications in Settings and adjust lock-screen notifi
 
 Settings → Account → Sign out removes the app's saved password, session cookies, and trust tokens while retaining cached reminders and queued edits. Settings → Sync & storage → Discard unsynced changes lets you select tasks with queued uploads or conflicts: new local-only tasks are removed locally, and existing tasks are restored from fresh iCloud copies. Settings → Sync & storage → Clear app cache removes the complete local reminder cache, including pending uploads and conflicts, while retaining saved sign-in and app preferences. These recovery actions require confirmation, do not delete records in iCloud, and do not erase logs, downloaded installers, or device backups.
 
-To remove local app data, fully close the app first, and save or sync any edits you want to keep. Remove the app's RemindersSync and RemindersForWindows data folders, or the corresponding package-specific data. In Windows Credential Manager, remove only this app's generic credentials for your Apple Account: their names include .com.paulsavvas.reminders-sync.password or .com.paulsavvas.reminders-sync.session, including session chunk entries. Removing the cache discards unsynced edits and does not delete reminders already stored in iCloud. Contact the developer if you need help locating these files or entries.
+To remove local app data, fully close the app first, and save or sync any edits you want to keep. Remove the app's GeminiRemindersCNSync and GeminiRemindersCN data folders, or the corresponding package-specific data. In Windows Credential Manager, remove only this app's generic credentials for your Apple Account: their names include .com.0gemini.reminders-cn.password or .com.0gemini.reminders-cn.session, including session chunk entries. Removing the cache discards unsynced edits and does not delete reminders already stored in iCloud. Contact the developer if you need help locating these files or entries.
 
 ## Privacy requests and children
 

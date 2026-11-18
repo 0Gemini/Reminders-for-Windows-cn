@@ -9,13 +9,13 @@ internal static class BrowserSessionTrustChecks
     {
         var state = J.Node(new { browser_cookie_session = true, client_id = "browser-client", cookies = new[]
         {
-            new { name = "X-APPLE-WEBAUTH-TOKEN", value = "test-cookie", domain = ".icloud.com", path = "/", expires = 0L }
+            new { name = "X-APPLE-WEBAUTH-TOKEN", value = "test-cookie", domain = ".icloud.com.cn", path = "/", expires = 0L }
         } }).AsObject();
         JsonNode Account(bool challenge = false, string account = "test@example.com") => J.Node(new
         {
             dsInfo = new { dsid = "1", appleId = account, hsaVersion = 2 },
             hsaTrustedBrowser = false, hsaChallengeRequired = challenge,
-            webservices = new { ckdatabasews = new { url = "https://p01-ckdatabasews.icloud.com" } }
+            webservices = new { ckdatabasews = new { url = "https://p01-ckdatabasews.icloud.com.cn" } }
         });
         var secrets = new SecretStore(new MemorySecrets()); var reads = 0;
         HttpMessageHandler Handler() => new ScriptHandler(async request =>

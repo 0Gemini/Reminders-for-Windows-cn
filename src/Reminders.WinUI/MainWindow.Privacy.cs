@@ -32,7 +32,7 @@ public sealed partial class MainWindow
         panel.Children.Add(new HyperlinkButton
         {
             Content = L10n.Get("ContactPaulSavvas"),
-            NavigateUri = new Uri("mailto:hello@paulsavvas.com"),
+            NavigateUri = new Uri("https://github.com/0Gemini/Reminders-for-Windows-cn"),
             HorizontalAlignment = HorizontalAlignment.Left,
             Padding = new Thickness(0)
         });

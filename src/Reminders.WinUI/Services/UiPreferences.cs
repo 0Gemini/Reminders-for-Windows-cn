@@ -6,7 +6,7 @@ internal static class UiPreferences
 {
     private static readonly object Gate = new();
     private static readonly string DirectoryPath = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RemindersForWindows");
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GeminiRemindersCN");
 #if DEBUG
     static UiPreferences()
     {

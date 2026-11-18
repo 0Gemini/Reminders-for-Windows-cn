@@ -4,7 +4,7 @@ internal static class AppLog
 {
     private static readonly object Gate = new();
     private static readonly string DirectoryPath = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RemindersSync", "logs");
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GeminiRemindersCNSync", "logs");
     private static readonly string FilePath = Path.Combine(DirectoryPath, "app.log");
     internal static string FolderPath => DirectoryPath;
 

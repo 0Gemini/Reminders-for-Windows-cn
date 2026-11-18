@@ -108,7 +108,7 @@ public sealed partial class MainWindow
                     AppLog.Info("apple sign-in: stage=reminders session_detected");
                     import = QueueCookieImportAsync(import, core);
                 }
-                if (e.Response.StatusCode != 200 || uri.Host != "setup.icloud.com" || AppleSignInPolicy.AccountEndpoint(uri) is not ("accountLogin" or "validate" or "loginOrCreateAccount")) return;
+                if (e.Response.StatusCode != 200 || uri.Host != "setup.icloud.com.cn" || AppleSignInPolicy.AccountEndpoint(uri) is not ("accountLogin" or "validate" or "loginOrCreateAccount")) return;
                 // Do not drop a successful validation while an earlier account
                 // response is being read. Trust may change between responses.
                 import = QueueImportAsync(import, core, e);
@@ -215,7 +215,7 @@ public sealed partial class MainWindow
                 if (!AppleSignInPreview.Enabled)
 #endif
                 await _sync.StartAsync(lifetime.Token);
-                var folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RemindersForWindows", "AppleSignIn");
+                var folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GeminiRemindersCN", "AppleSignIn");
 #if DEBUG
                 if (AppleSignInPreview.Enabled && Environment.GetEnvironmentVariable("REMINDERS_DATA_DIR") is { Length: > 0 } previewData)
                     folder = Path.Combine(previewData, "WebView2");

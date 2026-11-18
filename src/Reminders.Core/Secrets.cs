@@ -66,9 +66,9 @@ internal sealed class WindowsSecrets : ISecrets
 
 internal sealed class SecretStore(ISecrets vault)
 {
-    internal const string PasswordService = "com.paulsavvas.reminders-sync.password";
-    internal const string SessionService = "com.paulsavvas.reminders-sync.session";
-    private static string Chunk(char slot, int index) => $"com.paulsavvas.reminders-sync.session.chunk.{slot}.{index:00}";
+    internal const string PasswordService = "com.0gemini.reminders-cn.password";
+    internal const string SessionService = "com.0gemini.reminders-cn.session";
+    private static string Chunk(char slot, int index) => $"com.0gemini.reminders-cn.session.chunk.{slot}.{index:00}";
     internal static List<string> Chunks(string value)
     {
         var result = new List<string>(); var start = 0;

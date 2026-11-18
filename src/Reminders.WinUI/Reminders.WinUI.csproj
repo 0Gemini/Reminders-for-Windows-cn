@@ -21,12 +21,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Version>1.1.1</Version>
-    <Product>Reminders for Windows</Product>
+    <Product>Gemini Reminders CN</Product>
     <Authors>Paul Savvas</Authors>
     <Company>paulsavvas.com</Company>
     <Description>An independent native Windows client compatible with Apple iCloud Reminders.</Description>
     <PackageProjectUrl>https://paulsavvas.com</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Psavvas/Reminders-for-Windows</RepositoryUrl>
+    <RepositoryUrl>https://github.com/0Gemini/Reminders-for-Windows-cn</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reminders.Core\Reminders.Core.csproj" />
